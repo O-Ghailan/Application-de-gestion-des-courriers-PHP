@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <!-- Required meta tags always come first -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta http-equiv="x-ua-compatible" content="ie=edge">
+ 
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+     <link href="../css/styles.css" rel="stylesheet">
+     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+     <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css">
+     <link rel="icon" type="image/jpg" href="logo.jpg" />
+
+     <title>Gestion du courrier</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+           
+            <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="login.html"><span class="fa fa-home fa-lg"></span> Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./Apropos.html"><span class="fa fa-info fa-lg"></span> À propos</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
+                </ul>
+                <span class="navbar-text">
+                    <a id="loginButton">
+                    <span class="fa fa-sign-in"></span> Se connecter en tant qu'administrateur </a>
+                </span>
+            </div>           
+        </div>
+    </nav>
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Se connecter en tant qu'administrateur </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="login.php" method="POST">
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="REFERENCE">Référence</label>
+                                <input type="number" class="form-control form-control-sm mr-1" name="REFERENCE" id="REFERENCE" placeholder="Référence" required>
+                            </div>
+                            <div class="form-group col-sm-4">
+                                    <label class="sr-only" for="NOM">Nom</label>
+                                    <input type="text" class="form-control form-control-sm mr-1" name="NOM" id="NOM" placeholder="Nom" required>
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="MDP">Mot de passe</label>
+                                <input type="password" class="form-control form-control-sm mr-1" name="MDP" id="MDP" placeholder="Mot de passe" required>
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label"> Se souvenir de moi </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Annuler</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">Se connecter</button>        
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <div style="text-align:center">
+        <br>
+        <img src="logo.jpg" alt="Avatar" style="width:5%" class="center">
+        <div class="container">
+            <h5><b>Royaume du Maroc</b></h5>
+            <p><font size="2.5pt">Ministère de l'Energie des Mines, de l'Eau et de l'environnement</font></p>
+        </div>    
+            <div class="row  col-md-10"></div>
+  
+                <br><br>
+                <div class="card">
+                    <h4 class="card-header"><b>Contactez-nous</b></h4>
+                    <div class="card-body">
+                        <div class="container col-md-6 col-md-offset-3 col-lg-12 col-lg-offset-4">	
+                            <div class="col-12 col-md-11  espace60"> 
+
+                                <form action="contact.php" method="POST"> 
+                                    
+                                    <div class="form-group row">
+                                        <label for="nom" class="col-md-3 col-form-label">Nom</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="prenom" class="col-md-3 col-form-label">Prénom</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom" required="required">
+                                        </div>
+                                    </div>
+                                
+                            
+                                    <div class="form-group row">
+                                        <label for="telnum" class="col-12 col-md-3 col-form-label">Contact Tel.</label>
+                                        <div class="col-5 col-md-3">
+                                            <input type="tel" class="form-control" id="codepostal" name="codepostal" placeholder="Code postal" required="required">
+                                        </div>
+                                        <div class="col-7 col-md-5">
+                                            <input type="tel" class="form-control" id="telnum" name="telnum" placeholder="Tel. num" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="email" class="col-md-3 col-form-label">Email</label>
+                                        <div class="col-md-8">
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="required">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="civi" class="col-md-3 col-form-label">Civilité</label>
+                                        <div class="col-md-8">
+                                            <input type="radio" name="civi" value="mr" > Mr  &nbsp; &nbsp;
+                                            <input type="radio" name="civi" value="mme"> Mme
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-md-5 offset-md-2">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" name="approve" id="approve" value="" >
+                                                <label class="form-check-label" for="approve">
+                                                    <strong>May we contact you?</strong>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 offset-md-1">
+                                            <select class="form-control">
+                                                <option>Tel.</option>
+                                                <option>Email</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="feedback" class="col-md-3 col-form-label">Votre message</label>
+                                        <div class="col-md-8">
+                                            <textarea class="form-control" id="feedback" name="feedback" rows="12"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="offset-md-2 col-md-10">
+                                            <button type="submit" class="btn btn-primary" name="mailform">Envoyer</button>
+                                        </div>
+                                    </div>
+                                </form>   
+                        </div>      
+                 </div>
+                 <div class="col-12 col-md">
+                 </div>        
+            </div>
+     
+         </div>
+        </div>
+    </div>    
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">             
+                <div class="col-4 col-sm-2 offset-1">
+                    <h5>Liens</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="login.html">Accueil</a></li>
+                        <li><a href="./Apropos.html">À propos</a></li>
+                        <li><a href="./contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-7 col-sm-5">
+                    <h5>Notre adresse</h5>
+                    <address>
+                    Rue Hassan Benchekroun<br>
+                    RABAT<br>
+                        <i class="fa fa-phone fa-lg"></i>: +852 1234 5678<br>
+                        <i class="fa fa-fax fa-lg"></i>: +852 8765 4321<br>
+                        <i class="fa fa-envelope fa-lg"></i>: 
+                        <a href="mailto:water@gmail.com">water@gmail.com</a>
+                </address>
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="text-center">
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
+                    </div>   
+                </div>
+            </div>
+            <div class="row justify-content-center">             
+                <div class="col-auto">
+                    <p>© Copyright 2019</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+        
+    
+
+    <script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../js/scripts.js"></script>
+</body>    
+</html>
